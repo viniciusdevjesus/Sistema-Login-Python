@@ -2,8 +2,8 @@ import mysql.connector
 conect = mysql.connector.connect(
     host='localhost',
     user='root',
-    password='12162007Vv',
-    database='bdcli'
+    password='',
+    database='BD_CLI'
 )
 cursor = conect.cursor()
 print("========Sistema de Cadastro de Clientes=======")
@@ -11,7 +11,7 @@ decision = int(input("[1] - Login\n[2] - Cadastro\n"))
 if decision == 1:
     logName = str(input("Digite seu email: "))
     logPassword = str(input("Digite sua senha: "))
-    comando = 'SELECT {LogName} FROM Cliente'
+    comando = 'SELECT {logName} FROM Clientes'
     cursor.execute(comando)
     resultado = cursor.fetchall()
     if resultado != logName:
